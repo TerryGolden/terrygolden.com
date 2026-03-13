@@ -1,0 +1,205 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 43 74% 49%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 49%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 43 74% 49%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans dark:bg-background dark:text-foreground;
+  }
+
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+.markdown-editor {
+  @apply font-mono text-base leading-relaxed;
+}
+
+.markdown-preview {
+  @apply prose max-w-none prose-blue dark:prose-invert;
+}
+
+.markdown-preview pre {
+  @apply bg-secondary p-4 rounded-md overflow-x-auto;
+}
+
+.markdown-preview code {
+  @apply text-sm font-mono text-primary;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  @apply font-sans font-semibold text-foreground;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}
+
+/* Hero Text Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes goldenPulse {
+  0%, 100% {
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.8), 0 0 20px rgba(212,175,55,0.6), 0 0 30px rgba(212,175,55,0.4);
+  }
+  50% {
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.8), 0 0 40px rgba(212,175,55,1), 0 0 60px rgba(212,175,55,0.8), 0 0 80px rgba(212,175,55,0.6);
+  }
+}
+
+/* Mobile version with reduced glow */
+@media (max-width: 768px) {
+  @keyframes goldenPulse {
+    0%, 100% {
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8), 0 0 8px rgba(212,175,55,0.4), 0 0 12px rgba(212,175,55,0.2);
+    }
+    50% {
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8), 0 0 15px rgba(212,175,55,0.6), 0 0 25px rgba(212,175,55,0.4), 0 0 35px rgba(212,175,55,0.3);
+    }
+  }
+}
+
+.hero-text-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-letter {
+  display: inline-block;
+  animation: letterReveal 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.golden-word {
+  animation: goldenPulse 3s ease-in-out infinite;
+}
+
+/* Hero text glow effect - responsive */
+.hero-text-glow {
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.8), 5px 5px 10px rgba(212,175,55,0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-text-glow {
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8), 3px 3px 6px rgba(212,175,55,0.2);
+  }
+}
