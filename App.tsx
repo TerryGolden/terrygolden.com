@@ -6,18 +6,17 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MusicPlayerProvider } from "@/contexts/MusicPlayerContext";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import Releases from "./pages/Releases";
-import Press from "./pages/Press";
-import Radio from "./pages/Radio";
-import Photos from "./pages/Photos";
-import AlbumView from "./pages/AlbumView";
-import AlbumEmbed from "./pages/AlbumEmbed";
-import ArtOfRave from "./pages/ArtOfRave";
-
-import { PastEvents } from "./components/PastEvents";
-import SpotifyTest from "./components/admin/SpotifyTest";
+import Index from "@/pages/Index";
+import NotFound from "@/pages/NotFound";
+import Releases from "@/pages/Releases";
+import Press from "@/pages/Press";
+import Radio from "@/pages/Radio";
+import Photos from "@/pages/Photos";
+import AlbumView from "@/pages/AlbumView";
+import AlbumEmbed from "@/pages/AlbumEmbed";
+import ArtOfRave from "@/pages/ArtOfRave";
+import { PastEvents } from "@/components/PastEvents";
+import SpotifyTest from "@/components/admin/SpotifyTest";
 
 
 
