@@ -1,8 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize database client
-const supabaseUrl = 'https://jguuqjejqdiubvuzyesm.databasepad.com';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjU5YTI1OTgxLWUzNmUtNDc5OS1hNzc3LTlmMmQzNWM3YmIyYyJ9.eyJwcm9qZWN0SWQiOiJqZ3V1cWplanFkaXVidnV6eWVzbSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzY0MTczNzA3LCJleHAiOjIwNzk1MzM3MDcsImlzcyI6ImZhbW91cy5kYXRhYmFzZXBhZCIsImF1ZCI6ImZhbW91cy5jbGllbnRzIn0.lV3q6L4gZJu4a1QHC3RjXTeiehgkHARwSdUexICHXYQ';
+// Initialize database client - Terry Golden's Supabase instance
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://ogmcctnpxgemlvulhtom.supabase.co';
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
+if (!supabaseKey) {
+  console.warn('Supabase anon key not configured. Please set VITE_SUPABASE_ANON_KEY environment variable.');
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 /**
