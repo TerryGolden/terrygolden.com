@@ -258,6 +258,41 @@ CREATE TRIGGER update_press_mentions_updated_at BEFORE UPDATE ON press_mentions 
 CREATE TRIGGER update_events_updated_at BEFORE UPDATE ON events FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 -- ============================================
+-- INSTAGRAM POSTS CACHE TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS instagram_posts_cache (
+  id TEXT PRIMARY KEY,
+  caption TEXT,
+  media_type TEXT,
+  media_url TEXT,
+  thumbnail_url TEXT,
+  permalink TEXT,
+  timestamp TIMESTAMPTZ,
+  like_count INTEGER,
+  comments_count INTEGER,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_instagram_posts_timestamp ON instagram_posts_cache(timestamp DESC);
+
+-- ============================================
+-- INSTAGRAM CACHE METADATA TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS instagram_cache_metadata (
+  id INTEGER PRIMARY KEY DEFAULT 1,
+  last_fetched_at TIMESTAMPTZ DEFAULT NOW(),
+  post_count INTEGER DEFAULT 0
+);
+
+-- Enable RLS for Instagram tables
+ALTER TABLE instagram_posts_cache ENABLE ROW LEVEL SECURITY;
+ALTER TABLE instagram_cache_metadata ENABLE ROW LEVEL SECURITY;
+
+-- Public read access for Instagram cache (website needs to display these)
+CREATE POLICY "Public read access for instagram_posts_cache" ON instagram_posts_cache FOR SELECT USING (true);
+CREATE POLICY "Public read access for instagram_cache_metadata" ON instagram_cache_metadata FOR SELECT USING (true);
+
+-- ============================================
 -- SAMPLE DATA (Terry Golden)
 -- ============================================
 INSERT INTO monitored_artists (spotify_id, name, is_active) 
