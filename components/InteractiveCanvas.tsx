@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
-import { Layer } from '../../lib/storyRenderer';
-import { useTouchGestures } from '../../hooks/useTouchGestures';
+import { Layer } from '@/lib/storyRenderer';
+import { useTouchGestures } from '@/hooks/useTouchGestures';
 import { Move, RotateCw, ZoomIn, Maximize2 } from 'lucide-react';
-import GestureTutorial from './GestureTutorial';
+import GestureTutorial from '@/components/GestureTutorial';
 
 interface Props {
   previewImage: string | null;

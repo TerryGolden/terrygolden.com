@@ -3,9 +3,9 @@ import { ArrowLeft, Plus, Edit2, Trash2, FolderOpen, Image as ImageIcon, Share2,
 
 import { supabase } from '@/lib/supabase';
 import { useToast } from '@/hooks/use-toast';
-import AlbumForm from './AlbumForm';
-import AlbumOrganizer from './AlbumOrganizer';
-import { AlbumShareModal } from './AlbumShareModal';
+import AlbumForm from '@/components/AlbumForm';
+import AlbumOrganizer from '@/components/AlbumOrganizer';
+import { AlbumShareModal } from '@/components/AlbumShareModal';
 
 interface Props { onBack: () => void; }
 

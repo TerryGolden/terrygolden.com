@@ -8,10 +8,10 @@ import { Plus, Eye, Save, Code } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
-import { BuilderCanvas } from './builder/BuilderCanvas';
-import { BlocksSidebar } from './builder/BlocksSidebar';
-import { BlockCustomizer } from './builder/BlockCustomizer';
-import { generateEmailHTML } from './builder/emailHTMLGenerator';
+import { BuilderCanvas } from './BuilderCanvas';
+import { BlocksSidebar } from '@/components/BlocksSidebar';
+import { BlockCustomizer } from '@/components/BlockCustomizer';
+import { generateEmailHTML } from '@/lib/emailHTMLGenerator';
 
 export interface EmailBlock {
   id: string;

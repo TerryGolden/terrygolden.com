@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { X, Instagram, Share2, Loader2, Check, AlertCircle, Image, Eye, Film, Upload, Link, Download } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import ExportPanel from './story/ExportPanel';
+import ExportPanel from '@/components/ExportPanel';
 
 
 interface Track { artist: string; title: string; }

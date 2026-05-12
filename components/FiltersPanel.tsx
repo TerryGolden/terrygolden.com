@@ -1,9 +1,9 @@
-import { Button } from '../ui/button';
-import { Label } from '../ui/label';
-import { Slider } from '../ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { Switch } from '../ui/switch';
-import { LayerFilter } from '../../types/layerFilters';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Switch } from '@/components/ui/switch';
+import { LayerFilter } from '@/types/layerFilters';
 import { ChevronUp, ChevronDown, Trash2 } from 'lucide-react';
 
 interface FiltersPanelProps {

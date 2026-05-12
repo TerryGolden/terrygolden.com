@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { X, Instagram, Download, Eye, Loader2, Sparkles, Upload, Image as ImageIcon, Layers, Trash2, ChevronUp, ChevronDown, EyeOff, Plus, Type, Share2, Sliders, Wand2, Undo2, Redo2 } from 'lucide-react';
 
-import { storyTemplates, StoryTemplate } from '../data/instagramTemplates';
-import { renderStoryToCanvas, Layer, ImageLayer, TextLayer } from '../lib/storyRenderer';
-import { POPULAR_FONTS, TEXT_PRESETS } from '../data/textPresets';
-import ImageLayerControls from './story/ImageLayerControls';
-import TextLayerControls from './story/TextLayerControls';
-import LayersList from './story/LayersList';
-import InteractiveCanvas from './story/InteractiveCanvas';
-import ExportPanel from './story/ExportPanel';
-import TimelinePreview from './story/TimelinePreview';
-import { useHistory } from '../hooks/useHistory';
+import { storyTemplates, StoryTemplate } from '@/config/instagramTemplates';
+import { renderStoryToCanvas, Layer, ImageLayer, TextLayer } from '@/lib/storyRenderer';
+import { POPULAR_FONTS, TEXT_PRESETS } from '@/config/textPresets';
+import ImageLayerControls from '@/components/ImageLayerControls';
+import TextLayerControls from '@/components/TextLayerControls';
+import LayersList from '@/components/LayersList';
+import InteractiveCanvas from '@/components/InteractiveCanvas';
+import ExportPanel from '@/components/ExportPanel';
+import TimelinePreview from '@/components/TimelinePreview';
+import { useHistory } from '@/hooks/useHistory';
 
 
 

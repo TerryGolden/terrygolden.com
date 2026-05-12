@@ -1,10 +1,10 @@
 import React from 'react';
-import { LayerEffect } from '../../types/layerEffects';
-import { Button } from '../ui/button';
-import { Label } from '../ui/label';
-import { Slider } from '../ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { Switch } from '../ui/switch';
+import { LayerEffect } from '@/types/layerEffects';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Switch } from '@/components/ui/switch';
 import { ChevronUp, ChevronDown, Trash2 } from 'lucide-react';
 
 interface EffectsPanelProps {
